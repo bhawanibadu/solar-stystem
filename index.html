@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solar System</title>
+  <link rel="stylesheet" type="text/css" href="Style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@200;400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div id="app" data-current-planet="earth">
+
+  <div class="planet-info">
+    <h1 id="planet-name">Earth</h1>
+    <p id="planet-description">Our home planet, the only place we know of with life.</p>
+    <div class="stats-container">
+      <div class="stat">
+        <span id="stat-dist">149.6M km</span>
+        <label>Distance from Sun</label>
+      </div>
+      <div class="stat">
+        <span id="stat-day">24 Hours</span>
+        <label>Day Length</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="planet-visual">
+    <div class="planet-image"></div>
+    <div class="atmosphere-glow"></div>
+  </div>
+
+  <nav class="planet-nav">
+    <svg viewBox="0 0 1400 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax meet">
+  <defs>
+    <path id="navPath" d="M 0,400 A 700,700 0 0 1 1400,400" fill="none"/>
+  </defs>
+  <text font-family="Inter, sans-serif" letter-spacing="6" text-anchor="middle" font-size="18">
+    <textPath id="navTextPath" href="#navPath" startOffset="42%">
+          <tspan class="planet-link" data-planet="mercury">Mercury</tspan>
+          <tspan class="planet-link" data-planet="venus"   dx="50">Venus</tspan>
+          <tspan class="planet-link" data-planet="earth"   dx="50">Earth</tspan>
+          <tspan class="planet-link" data-planet="mars"    dx="50">Mars</tspan>
+          <tspan class="planet-link" data-planet="jupiter" dx="50">Jupiter</tspan>
+          <tspan class="planet-link" data-planet="saturn"  dx="50">Saturn</tspan>
+          <tspan class="planet-link" data-planet="uranus"  dx="50">Uranus</tspan>
+          <tspan class="planet-link" data-planet="neptune" dx="50">Neptune</tspan>
+        </textPath>
+      </text>
+    </svg>
+  </nav>
+
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
