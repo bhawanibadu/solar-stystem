@@ -18,15 +18,13 @@ body {
   font-family: 'Space Grotesk', sans-serif;
   overflow-x: hidden;
   min-height: 100vh;
-
   background:
-    linear-gradient(rgba(0, 0, 0, 0.7),
-    rgba(0, 0, 0, 0.7)),
+    linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
     url('galaxy.jpg');
-
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
 }
 
 #app {
@@ -40,28 +38,28 @@ body {
 
 .planet-info {
   position: absolute;
-  top: 6vh;
+  top: 5vh;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
+  width: min(92%, 1200px);
   z-index: 10;
-  width: min(95%, 1200px);
 }
 
 .planet-info h1 {
-  font-size: clamp(3rem, 10vw, 10rem);
+  font-size: clamp(3rem, 8vw, 8rem);
   font-weight: 200;
-  letter-spacing: clamp(4px, 1vw, 20px);
+  letter-spacing: clamp(2px, 0.7vw, 12px);
   text-transform: uppercase;
-  line-height: 1;
+  line-height: 0.95;
   font-family: 'Orbitron', sans-serif;
 }
 
 .planet-info p {
-  width: min(90%, 1000px);
+  width: min(90%, 900px);
   margin: 20px auto 0;
-  font-size: clamp(1rem, 1.8vw, 2rem);
-  line-height: 1.6;
+  font-size: clamp(1rem, 1.5vw, 1.6rem);
+  line-height: 1.5;
   opacity: 0.75;
 }
 
@@ -71,9 +69,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: clamp(20px, 5vw, 80px);
-
-  margin-top: 30px;
+  gap: clamp(20px, 4vw, 60px);
+  margin-top: 28px;
   flex-wrap: wrap;
 }
 
@@ -83,14 +80,14 @@ body {
 
 .stat span {
   display: block;
-  font-size: clamp(1.5rem, 3vw, 3.5rem);
+  font-size: clamp(1.5rem, 2.5vw, 3rem);
   font-weight: 600;
 }
 
 .stat label {
   display: block;
   margin-top: 6px;
-  font-size: clamp(0.8rem, 1.4vw, 1.5rem);
+  font-size: clamp(0.8rem, 1vw, 1.2rem);
   text-transform: uppercase;
   letter-spacing: 2px;
   color: var(--blue);
@@ -101,9 +98,9 @@ body {
 .planet-visual {
   position: absolute;
   left: 50%;
-  bottom: -45vw;
+  bottom: -28%;
   transform: translateX(-50%);
-  width: min(1100px, 95vw);
+  width: min(85vw, 950px);
   aspect-ratio: 1 / 1;
   z-index: 1;
 }
@@ -115,10 +112,9 @@ body {
   background-image: url('earth.png');
   background-size: cover;
   background-position: center;
-  box-shadow:
-    inset 0 20px 80px rgba(0, 0, 0, 0.6);
-  transition:
-    transform 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+  background-repeat: no-repeat;
+  box-shadow: inset 0 20px 80px rgba(0, 0, 0, 0.6);
+  transition: transform 1.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .atmosphere-glow {
@@ -126,8 +122,7 @@ body {
   inset: 0;
   border-radius: 50%;
   pointer-events: none;
-  box-shadow:
-    0 -10px 60px rgba(77, 166, 255, 0.2);
+  box-shadow: 0 -10px 60px rgba(77, 166, 255, 0.2);
   transition: box-shadow 1s ease;
 }
 
@@ -135,10 +130,10 @@ body {
 
 .planet-nav {
   position: absolute;
-  bottom: -8vw;
   left: 50%;
+  bottom: 3%;
   transform: translateX(-50%);
-  width: min(1100px, 95vw);
+  width: min(95vw, 1200px);
   z-index: 100;
   pointer-events: none;
 }
@@ -152,13 +147,11 @@ body {
 
 .planet-link {
   fill: var(--dim);
-  font-size: clamp(14px, 2vw, 45px);
+  font-size: clamp(12px, 1.7vw, 32px);
   text-transform: uppercase;
   cursor: pointer;
   pointer-events: all;
-  transition:
-  fill 0.3s ease,
-  transform 0.3s ease;
+  transition: fill 0.3s ease, transform 0.3s ease;
 }
 
 .planet-link:hover {
@@ -178,55 +171,70 @@ body {
   fill: var(--blue);
 }
 
-/* ───────────────── PLANET ROTATIONS ───────────────── */
+/* ───────────────── ROTATION ───────────────── */
 
 [data-current-planet="mercury"] .planet-image {
   transform: rotate(135deg);
 }
+
 [data-current-planet="venus"] .planet-image {
   transform: rotate(90deg);
 }
+
 [data-current-planet="earth"] .planet-image {
   transform: rotate(45deg);
 }
+
 [data-current-planet="mars"] .planet-image {
   transform: rotate(0deg);
 }
+
 [data-current-planet="jupiter"] .planet-image {
   transform: rotate(-45deg);
 }
+
 [data-current-planet="saturn"] .planet-image {
   transform: rotate(-70deg);
 }
+
 [data-current-planet="uranus"] .planet-image {
   transform: rotate(-10deg);
 }
+
 [data-current-planet="neptune"] .planet-image {
   transform: rotate(-180deg);
 }
+
 /* ───────────────── GLOW COLORS ───────────────── */
 
 [data-current-planet="mercury"] .atmosphere-glow {
   box-shadow: 0 -10px 60px rgba(180, 180, 180, 0.3);
 }
+
 [data-current-planet="venus"] .atmosphere-glow {
   box-shadow: 0 -10px 60px rgba(255, 200, 100, 0.3);
 }
+
 [data-current-planet="earth"] .atmosphere-glow {
   box-shadow: 0 -10px 60px rgba(77, 166, 255, 0.3);
 }
+
 [data-current-planet="mars"] .atmosphere-glow {
   box-shadow: 0 -10px 60px rgba(255, 77, 77, 0.4);
 }
+
 [data-current-planet="jupiter"] .atmosphere-glow {
   box-shadow: 0 -10px 60px rgba(200, 150, 100, 0.3);
 }
+
 [data-current-planet="saturn"] .atmosphere-glow {
   box-shadow: 0 -10px 60px rgba(220, 200, 130, 0.3);
 }
+
 [data-current-planet="uranus"] .atmosphere-glow {
   box-shadow: 0 -10px 60px rgba(100, 220, 220, 0.3);
 }
+
 [data-current-planet="neptune"] .atmosphere-glow {
   box-shadow: 0 -10px 60px rgba(77, 121, 255, 0.5);
 }
@@ -235,15 +243,17 @@ body {
 
 @media (max-width: 1024px) {
   .planet-visual {
-    width: 130vw;
-    bottom: -50vw;
+    width: 110vw;
+    bottom: -35vw;
   }
+
   .planet-nav {
-    width: 130vw;
-    bottom: -12vw;
+    width: 120vw;
+    bottom: 6vw;
   }
-  .planet-info {
-    top: 5vh;
+
+  .planet-link {
+    font-size: 20px;
   }
 }
 
@@ -254,27 +264,33 @@ body {
     top: 4vh;
     padding: 0 20px;
   }
+
   .planet-info h1 {
-    font-size: clamp(2.5rem, 15vw, 5rem);
+    font-size: clamp(2.5rem, 14vw, 5rem);
   }
+
   .planet-info p {
     font-size: 1rem;
     line-height: 1.5;
   }
+
   .stats-container {
     flex-direction: column;
-    gap: 20px;
+    gap: 18px;
     margin-top: 20px;
   }
+
   .planet-visual {
-    width: 160vw;
-    bottom: -60vw;
+    width: 150vw;
+    bottom: -45vw;
   }
+
   .planet-nav {
-    width: 170vw;
-    bottom: -18vw;
+    width: 160vw;
+    bottom: 10vw;
   }
+
   .planet-link {
-    font-size: clamp(10px, 3vw, 18px);
+    font-size: 12px;
   }
 }
