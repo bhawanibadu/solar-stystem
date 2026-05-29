@@ -5,6 +5,10 @@
   --planet-size: clamp(400px, 50vw, 700px);
 }
 
+html{
+  zoom:0.6;
+}
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
