@@ -81,7 +81,7 @@ body {
 
 .planet-visual {
   position: absolute;
-  bottom: calc(var(--planet-size) * -0.65);
+  bottom: calc(var(--planet-size) * -0.55);
   left: 50%;
   transform: translateX(-50%);
   width: var(--planet-size);
