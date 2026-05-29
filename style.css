@@ -5,8 +5,10 @@
   --planet-size: clamp(600px, 80vw, 1000px);
 }
 
-html{
-  zoom:0.6;
+html {
+  zoom: 0.6;
+  -moz-transform: scale(0.6);
+  -moz-transform-origin: top left;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -79,7 +81,7 @@ body {
 
 .planet-visual {
   position: absolute;
-  bottom: calc(var(--planet-size) * -0.6);
+  bottom: calc(var(--planet-size) * -0.65);
   left: 50%;
   transform: translateX(-50%);
   width: var(--planet-size);
