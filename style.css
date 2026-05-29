@@ -32,7 +32,7 @@ body {
 
 .planet-info {
   position: absolute;
-  top: 8vh;
+  top: 5vh;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -114,7 +114,7 @@ body {
   bottom: calc(var(--planet-size) * -0.086);
   left: 50%;
   transform: translateX(-50%);
-  width: var(--planet-size) * 1.4;
+  width: var(--planet-size);
   z-index: 100;
   pointer-events: none;
 }
