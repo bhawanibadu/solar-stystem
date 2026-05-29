@@ -2,7 +2,7 @@
   --blue: #4da6ff;
   --bg:   #060505;
   --dim:  rgba(255, 255, 255, 0.45);
-  --planet-size: clamp(700px, 100vw, 1400px);
+  --planet-size: clamp(400px, 50vw, 700px);
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
