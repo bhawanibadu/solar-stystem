@@ -104,7 +104,7 @@ body {
 
 .planet-nav {
   position: absolute;
-  bottom: calc(var(--ps) * -0.08);
+  bottom: calc(var(--ps) * -0.12);
   left: 50%;
   transform: translateX(-50%);
   width: var(--ps);
