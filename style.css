@@ -107,7 +107,7 @@ body {
   bottom: calc(var(--ps) * -0.10);
   left: 50%;
   transform: translateX(-50%);
-  width: var(--ps)* 1.1);
+  width: var(--ps);
   z-index: 100;
   pointer-events: none;
 }
